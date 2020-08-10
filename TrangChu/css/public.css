@@ -1,0 +1,161 @@
+
+#OverOuter{
+    width: 100%;
+    background: #703112;
+    position: relative;
+    z-index: 1;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+}
+#OverOuter .overouter-inside{
+    width: 1132px;
+    margin: 0 auto;
+    color: #e2e2e2;
+}
+#OverOuter .overouter-inside_left{
+    float: left;
+}
+#OverOuter .overouter-inside_right{
+    float: right;
+}
+/* ................HEADER................... */
+#Header{
+    background-color: #e0e0e0;
+    padding-left: 171.6px ;
+    padding-right: 171.6px;
+}
+#logo img{
+    max-height: 20px;
+}
+.main-nav{
+    float:right;
+    list-style:none;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+.main-nav li a{
+    text-decoration:none;
+    color: #703112;
+    font-size: 80%;
+    font-weight: 700;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom:2px solid #cccccc;
+}
+.main-nav li{
+    display:inline-block;
+    margin-right: 30px;
+}
+#mega ul.main-nav>li>div{
+    position: absolute;
+    left: 0;
+    top: 48px;
+    display: none;
+    padding: 0;
+    box-shadow: 2px 2px 4px #333;
+    overflow: hidden;
+    font-size: .9em;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 36px 0;
+}
+.nonSub {
+    width: 300px;
+    padding: 10px;
+}
+
+.container2{
+    margin: 0px 171.6px;
+}
+
+
+/*.............BlockNew...............  */
+.BlockNew h2{
+    background: #703112;
+    padding: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+#news-list{
+    list-style: none;
+    float: left;
+    width: 50%;
+    margin-bottom: 10px;
+    margin-left: -15px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px; 
+}
+#news-img{
+    float: left;
+}
+#news-img img{
+    width: 100%;
+} 
+#news-content{
+    float: right;
+    width: 100%;
+}
+#news-content h3{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    color: #555;
+    font-size: 14px;
+}
+#news-content h3 a{
+    font-weight: bold;
+    text-decoration: none;
+    color: #555;
+}
+#news-content p{
+    font-size: 14px;
+}
+.view-more_right {
+    text-align: right;
+}
+.view-more_right .view-a{
+    font-size: 14px;
+    background: #333;
+    color: #fff;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.view-more_right:hover .view-a,
+.view-more_right:active .view-a{
+    color: #fff;
+    filter: opacity(80%);
+    transition: all .3s;
+    text-decoration:none;
+}
+/* ....................footer................ */
+.footer{
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    background: #703112;
+}
+.footer-logo img{
+    max-width: 30%;
+    background: #fff;
+    margin-left: 100px;
+}
+.footer-contact{
+    color: #e2e2e2;
+    font-family: Verdana, Geneva, sans-serif;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.footer-contact ul{
+    list-style: none;
+}
+.footer-contact ul li{
+    padding-bottom: 3px;
+    list-style: none;
+}

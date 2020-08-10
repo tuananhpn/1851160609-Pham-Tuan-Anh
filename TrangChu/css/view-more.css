@@ -1,0 +1,68 @@
+.main a{
+    font-size: 10px;
+}
+.main a:hover{
+    color: black;
+}
+
+
+table,td{
+    border: 0.5px solid rgb(206, 201, 201);
+}
+table{
+    border-collapse: collapse;
+    margin-bottom: 3px;
+}
+.img td{
+    padding: 10px;
+}
+.img img{
+    object-fit: contain;
+    max-height: 100%;
+    height: auto;
+    width: 540px;
+}
+.showimg h3{
+    text-align: center;
+    color: #703112;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 13px;
+    margin-bottom: 17px;
+}
+
+/*.............Link...............  */
+.link{
+    font-size: 13px;
+    margin-right: 150px;
+    line-height: normal;
+}
+.link strong{
+    color: #703112;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.link td{
+    padding: 10px;
+}
+.link ul{
+    padding-left: 30px;
+    margin-bottom: 0px;
+}
+.link li{
+    margin-bottom: 10px;
+}
+
+.link img{
+    width: 250px;
+    margin-top: 10px;
+}
+.showimg{
+    margin-bottom: 40px;
+    
+}
+.search{
+    border-top: 1px dashed #ccc;
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
