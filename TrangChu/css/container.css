@@ -21,6 +21,9 @@ body{
     text-decoration: underline;
 }
 
+.container2{
+    margin: 0px 171.6px;
+}
 .container2 h3,h4,h2{
     color: #703112;
     text-transform: uppercase;

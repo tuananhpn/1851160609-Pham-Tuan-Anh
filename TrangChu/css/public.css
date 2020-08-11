@@ -1,4 +1,5 @@
 
+/*  */
 #OverOuter{
     width: 100%;
     background: #703112;
@@ -22,11 +23,21 @@
 /* ................HEADER................... */
 #Header{
     background-color: #e0e0e0;
-    padding-left: 171.6px ;
-    padding-right: 171.6px;
+}
+#pagemenu-search{
+    height: 60px;
+    padding-left:  171.6px ;
+    padding-right:  141.6px ;
+}
+#mega{
+    padding-left: 0px;
+    padding-right: 0px; /* xoa mac dinh cua boostrap*/
+}
+#logo{
+    margin-top: 5px;
 }
 #logo img{
-    max-height: 20px;
+    max-height: 40px;
 }
 .main-nav{
     float:right;
@@ -37,7 +48,7 @@
 .main-nav li a{
     text-decoration:none;
     color: #703112;
-    font-size: 80%;
+    font-size: .9em;
     font-weight: 700;
 }
 .main-nav li a:hover,
@@ -46,7 +57,10 @@
 }
 .main-nav li{
     display:inline-block;
-    margin-right: 30px;
+    margin-right: 20px;
+}
+.main-nav li:last-of-type{
+    margin-right: 0px;
 }
 #mega ul.main-nav>li>div{
     position: absolute;
@@ -65,11 +79,6 @@
     width: 300px;
     padding: 10px;
 }
-
-.container2{
-    margin: 0px 171.6px;
-}
-
 
 /*.............BlockNew...............  */
 .BlockNew h2{
