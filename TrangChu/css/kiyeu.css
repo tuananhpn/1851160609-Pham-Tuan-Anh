@@ -9,12 +9,7 @@ table{
 .img td{
     padding: 10px;
 }
-.img img{
-    object-fit: contain;
-    max-height: 100%;
-    height: auto;
-    width: 540px;
-}
+
 .showimg h3{
     text-align: center;
     color: #703112;
@@ -37,7 +32,6 @@ table{
 }
 
 .img-four ul{
-    display: flex;
     padding-left: 0px;
     margin: 0px;
 }
@@ -52,10 +46,9 @@ table{
     background-color: #703112;
 }
 .img-four ul li{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     list-style-type: none;
-    width: 25%;
     margin-right: 56px;
     margin-bottom: 23px;
 }
@@ -63,17 +56,11 @@ table{
     margin-right: 0px;
 }
 
-.img-four img{  /*để đảm bảo rằng tất cả các hình ảnh đều sử dụng tất cả không gian có sẵn,
-    giữ nguyên tỷ lệ và không cắt giảm: */
-object-fit: contain;
-max-width: 100%;
-max-height: 100%;
-width: auto;
-height: auto;
+.img-four img{ 
 border-radius: 9999px;
 box-shadow: 2px 2px 5px #666; /* tao bong */
 }
-.img-four div{
+.img-four li div{
     font-family: Tahoma, Geneva, sans-serif;
     text-align: center;
     padding: 20px 0px;
@@ -98,3 +85,19 @@ box-shadow: 2px 2px 5px #666; /* tao bong */
     text-decoration: none;
     text-transform: none;
 }
+
+@media (max-width: 992px)
+        {
+            .img-four .row div:nth-child(n+3){
+                display: none;
+            }
+            .img-four li{
+                padding: 0 15%  !important;
+            }
+            .img-four li div p{
+                display: none;
+            }
+            .img-four li div h4{
+                margin-bottom: 10px;
+            }
+        }
