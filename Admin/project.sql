@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 12, 2020 lúc 09:42 AM
+-- Thời gian đã tạo: Th10 12, 2020 lúc 12:11 PM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.11
 
@@ -31,7 +31,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `parent` tinyint(4) DEFAULT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -40,19 +42,19 @@ CREATE TABLE `categories` (
 -- Đang đổ dữ liệu cho bảng `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`, `parent`, `created_at`, `updated_at`) VALUES
-(1, 'album', 0, NULL, NULL),
-(2, 'Bảng Giá', 0, NULL, NULL),
-(3, 'Kỷ Yếu Miền Bắc', 0, NULL, NULL),
-(4, 'TOUR Kỷ Yếu', 0, NULL, NULL),
-(5, 'Thuê Trang Phục', 0, NULL, NULL),
-(6, 'Góc Tư Vấn', 0, NULL, NULL),
-(7, 'CHỤP ẢNH KỶ YẾU', 1, NULL, NULL),
-(8, 'CHỤP ẢNH PHÓNG SỰ CƯỚI', 1, NULL, NULL),
-(9, 'BẢNG GIÁ CHỤP ẢNH KỶ YẾU', 2, NULL, NULL),
-(10, 'BẢNG GIÁ CHỤP ẢNH PHÓNG SỰ CƯỚI', 2, NULL, NULL),
-(11, 'CHỤP ẢNH KỶ YẾU - TỔNG HỢP 1000 CONCEPT HOT 2020', 7, NULL, NULL),
-(12, 'CHỤP ẢNH KỶ YẾU - CONCEPT BOHEMIAN', 7, NULL, NULL);
+INSERT INTO `categories` (`id`, `name`, `slug`, `parent`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'album', NULL, 0, 1, NULL, NULL),
+(2, 'Bảng Giá', NULL, 0, 2, NULL, NULL),
+(3, 'Kỷ Yếu Miền Bắc', NULL, 0, 1, NULL, NULL),
+(4, 'TOUR Kỷ Yếu', NULL, 0, 1, NULL, NULL),
+(5, 'Thuê Trang Phục', NULL, 0, 1, NULL, NULL),
+(6, 'Góc Tư Vấn', NULL, 0, 1, NULL, NULL),
+(7, 'CHỤP ẢNH KỶ YẾU', NULL, 1, 1, NULL, NULL),
+(8, 'CHỤP ẢNH PHÓNG SỰ CƯỚI', NULL, 1, 2, NULL, NULL),
+(9, 'BẢNG GIÁ CHỤP ẢNH KỶ YẾU', NULL, 2, 1, NULL, NULL),
+(10, 'BẢNG GIÁ CHỤP ẢNH PHÓNG SỰ CƯỚI', NULL, 2, 1, NULL, NULL),
+(11, 'CHỤP ẢNH KỶ YẾU - TỔNG HỢP 1000 CONCEPT HOT 2020', NULL, 7, 1, NULL, NULL),
+(12, 'CHỤP ẢNH KỶ YẾU - CONCEPT BOHEMIAN', NULL, 7, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,7 @@ INSERT INTO `categories` (`id`, `name`, `parent`, `created_at`, `updated_at`) VA
 
 CREATE TABLE `images` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `categories_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -113,11 +115,11 @@ INSERT INTO `posts` (`id`, `title`, `content`, `categories_id`, `created_at`, `u
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `fullname` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'xxxxxxxxx',
   `birthday` date DEFAULT NULL,
-  `level` tinyint(1) NOT NULL DEFAULT 0,
+  `level` tinyint(4) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -138,7 +140,9 @@ INSERT INTO `users` (`id`, `fullname`, `email`, `password`, `address`, `birthday
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `categories_slug_unique` (`slug`),
+  ADD KEY `categories_user_id_foreign` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `images`
@@ -192,6 +196,12 @@ ALTER TABLE `users`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `categories`
+--
+ALTER TABLE `categories`
+  ADD CONSTRAINT `categories_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `images`
