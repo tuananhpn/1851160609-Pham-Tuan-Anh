@@ -36,12 +36,12 @@ if (!isset($_SESSION['level'])) {
         <div class='sidebar'>
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <img class="img-logo" src="admin/assets/img/wru.png" alt="Logo" />
-                    <a class="link-tlu" href="index.php" alt="Trang chủ">Đại học thuỷ lợi</a>
+                    <img class="img-logo" src="#" alt="Logo" />
+                    <a class="link-tlu" href="index.php" alt="Trang chủ">HC MEDIA</a>
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">
+                        <a class="nav-link" href="./admin/home.php">
                             <i class="nc-icon nc-grid-45"></i>
                             <span class="nav-item-title">HOME</span>
                         </a>
@@ -72,12 +72,6 @@ if (!isset($_SESSION['level'])) {
                             <span class="nav-item-title">USERS<i class="fas fa-caret-down"></i></span>
                         </a>
                         <ul class="nav collapse" id="component2">
-                            <li class="nav-item nav-child">
-                                <a class="nav-link" href="dashboard.php?category=manageUser">
-                                    <span class="link-name-mini">MU</span>
-                                    <span class="link-name-normal nav-item-title">Manager Users</span>
-                                </a>
-                            </li>
                             <li class="nav-item nav-child">
                                 <a class="nav-link" href="dashboard.php?category=manageAcc">
                                     <span class="link-name-mini">MA</span>
@@ -183,5 +177,4 @@ if (!isset($_SESSION['level'])) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 </body>
-
 </html>

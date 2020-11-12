@@ -1,7 +1,14 @@
 <div class="user-management col-12 mt-3">
     <div class="card">
         <div class="card-header">
-            <h3 class="text-center">Manager Accounts</h3>
+            <h3 class="text-center">Manager Account</h3>
+            <div class="status-bar mt-3 d-flex">
+                <form>
+                    <input type="text" class="textbox" placeholder="Search" />
+                </form>
+                <button title="Tìm kiếm" type="submit" class="button"><i class="fas fa-search"></i></button>
+                <a class="text-decoration-none ml-auto" href="dashboard.php?category=newAccount"><input type="button" class="btn btn-outline-secondary" value="Thêm người dùng" /></a>
+            </div>
         </div>
         <div class="card-body">
             <div class="list-account mt-5 table-responsive">
