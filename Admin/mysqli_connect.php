@@ -2,7 +2,7 @@
 DEFINE ('DB_USER', 'root');
 DEFINE ('DB_PASSWORD', ''); 
 DEFINE ('DB_HOST', 'localhost');
-DEFINE ('DB_NAME', 'test');
+DEFINE ('DB_NAME', 'project');
 
 // Make the connection:
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
