@@ -25,7 +25,7 @@
                     </thead>
                     <tbody>
                     <?php
-                        $sql = "SELECT * FROM Users ORDER BY userID ASC LIMIT 15";
+                        $sql = "SELECT * FROM users ORDER BY  ASC LIMIT 15";
                         $users = mysqli_query($conn, $sql);
                         while($rowUser = mysqli_fetch_array($users)) {
                     ?>
