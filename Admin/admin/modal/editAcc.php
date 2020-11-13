@@ -10,20 +10,12 @@
             <div class="modal-body">
                 <div class="card-body ">
                     <div class="row">
-                        <div class="col-md-6 col-12">
+                        <div class="col-12">
                             <div class="form-group">
-                                <label>First Name</label>
+                                <label>Name</label>
                                 <input type="text" class="form-control" id="fNameEdit" />
-                                <div class="invalid-feedback" style="font-size: 12px">First name is required.</div>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" class="form-control" id="lNameEdit" />
-                                <div class="invalid-feedback" style="font-size: 12px">Last name is required.</div>
-                            </div>
-                        </div>
+                        </div>  
                     </div>
                     <div class="row">
                         <div class="col-12">
@@ -39,10 +31,8 @@
                                 <label>Level</label>
                                 <select class="custom-select" name="level" id="levelEdit">
                                     <option value="1">Admin</option>
-                                    <option value="2">User</option>
-                                    <option value="3">User</option>
+                                    <option value="2">Post</option>
                                 </select>
-                                <div class="invalid-feedback" style="font-size: 12px">Level is required.</div>
                             </div>
                         </div>
                     <div>
