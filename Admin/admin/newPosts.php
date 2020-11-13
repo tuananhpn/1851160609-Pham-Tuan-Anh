@@ -7,7 +7,7 @@ if (isset($_POST['sbm'])) {
     $sql = "INSERT INTO posts (title, content,categories_id )
     VALUES ('$title','$cont',$cat)";
     if(mysqli_query($conn,$sql)){
-        header("location: ./index.php");
+        header("location: index.php?category=managePost");
     }
     
 }
