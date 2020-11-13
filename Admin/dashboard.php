@@ -29,8 +29,8 @@
         <div class='sidebar'>
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <img class="img-logo" src="#" alt="Logo" />
-                    <a class="link-tlu" href="index.php" alt="Trang chủ">HC MEDIA</a>
+                    <img class="img-logo" src="./images/logo.jpg" alt="Logo" />
+                    <a class="link-hcmedia" href="index.php" alt="Trang chủ">HC MEDIA</a>
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
@@ -62,13 +62,21 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#component2">
                             <i class="nc-icon nc-single-02"></i>
-                            <span class="nav-item-title">USERS<i class="fas fa-caret-down"></i></span>
+                            <span class="nav-item-title">Manager<i class="fas fa-caret-down"></i></span>
                         </a>
                         <ul class="nav collapse" id="component2">
                             <li class="nav-item nav-child">
                                 <a class="nav-link" href="index.php?category=manageAcc">
                                     <span class="link-name-mini">MA</span>
                                     <span class="link-name-normal nav-item-title">Manager Accounts</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav collapse" id="component2">
+                            <li class="nav-item nav-child">
+                                <a class="nav-link" href="index.php?category=managePost">
+                                    <span class="link-name-mini">MP</span>
+                                    <span class="link-name-normal nav-item-title">Manager Post</span>
                                 </a>
                             </li>
                         </ul>
@@ -96,13 +104,13 @@
                                 </div>
                                 <ul class="nav users-dropdown" id="component3">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" data-toggle="modal" data-target="#changePass">
+                                        <a class="nav-link" href="index.php?category=changepass&id=<?php $user_id=$_SESSION['user']['id'];echo $user_id?>">
                                             <i class="nc-icon nc-refresh-02"></i>
                                             <span class="link-name-normal">Change Password</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="layout/logout.php">
+                                        <a class="nav-link" href="./admin/logout.php">
                                             <i class="nc-icon nc-button-power"></i>
                                             <span class="link-name-normal text-danger">Logout</span>
                                         </a>
@@ -135,6 +143,12 @@
                 case "managePost":
                     include('admin/managePost.php');
                     break;
+                case "editacc":
+                    include('admin/editacc.php');
+                    break;
+                case "changepass":
+                    include('changePassword.php');
+                    break;
                 default:
                     include('admin/home.php');
                     break;
@@ -142,7 +156,6 @@
             ?>
         </div>
     </div>
-    <?php include('changePassword.php'); ?>
     <script>
         if ($("#contentPost").length) {
             CKEDITOR.replace('contentPost',
