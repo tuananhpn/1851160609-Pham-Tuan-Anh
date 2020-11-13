@@ -13,21 +13,21 @@
                         </a>
                     </li>
                     <li>
-                        
-                        <?php
-                        
-                         $sql = "SELECT*FROM categories";
-                                $query = mysqli_query($conn,$sql);
-                                while($rows = mysqli_fetch_assoc($query)){}
+                       <?php
+                            $sql0 = "SELECT * FROM categories WHERE parent = 0";
+                            $query0 = mysqli_query($conn,$sql0);
+                            $rows0 = mysqli_fetch_assoc($query0);
+                            
+                            
                         ?>
                         <a href="#">
-                            <span><?php if($rows['level'] == 0){ echo $rows['name'];} ?></span>
+                            <span>ALBUM</span>
                         </a>
                         <div class="container-11 nonSub">
                             <ul>
                                 <div col col1>
                                     <li>
-                                        <a href="#"><?php if($rows['level'] == 1){ echo $rows['name'];} ?></a>
+                                        <a href="#"></a>
                                     </li>
                                 </div>
                                 
