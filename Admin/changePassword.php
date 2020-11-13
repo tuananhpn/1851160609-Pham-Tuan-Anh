@@ -45,15 +45,15 @@ if(isset($err)){
         <div class="card-body" id="newUserForm">
             <div class="form-group">
                 <label class="col-form-label">Old Password</label>
-                <input type="text" class="form-control" name="pass" id="Name" maxlength="30" >
+                <input type="password" class="form-control" name="pass" id="Name" maxlength="30" >
             </div>
             <div class="form-group">
                 <label class="col-form-label">New Password</label>
-                <input type="text" class="d-block mw-auto w-100 form-fields form-control w-25" name="newpass" id="email">
+                <input type="password" class="d-block mw-auto w-100 form-fields form-control w-25" name="newpass" id="email">
             </div>
             <div class="form-group">
                 <label class="col-form-label">Confirm Password</label>
-                <input type="text" class="form-control" name="cnewpass" id="Add" maxlength="30">
+                <input type="password" class="form-control" name="cnewpass" id="Add" maxlength="30">
             </div>
             <div class="card-bottom">
                 <input type="submit" class="btn btn-info d-block ml-auto" id="newUserBtn" name="sbm" value="ADD NEW" />
