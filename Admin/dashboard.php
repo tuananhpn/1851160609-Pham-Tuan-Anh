@@ -120,23 +120,20 @@
                 $category = '';
             }
             switch ($category) {
+                case "home":
+                    include('admin/home.php');
+                    break;
                 case "newPost":
                     include('admin/newPosts.php');
                     break;
                 case "newAccount":
                     include('admin/newAccount.php');
                     break;
-                case "manageUser":
-                    include('admin/manageUser.php');
-                    break;
                 case "manageAcc":
                     include('admin/manageAcc.php');
                     break;
-                case "manageStudent":
-                    include('layout/manageStudent.php');
-                    break;
-                case "manageSubject":
-                    include('layout/manageSubject.php');
+                case "managePost":
+                    include('admin/managePost.php');
                     break;
                 default:
                     include('admin/home.php');
