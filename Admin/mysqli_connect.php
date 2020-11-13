@@ -1,11 +1,8 @@
 <?php
-DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PASSWORD', ''); 
-DEFINE ('DB_HOST', 'localhost');
-DEFINE ('DB_NAME', 'project');
+
 
 // Make the connection:
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$conn = new mysqli( 'localhost','root', '', 'hcmedia');
 
 // Notify if connection failed
 if ($conn->connect_error) {

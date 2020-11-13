@@ -133,17 +133,8 @@ if (!isset($_SESSION['level'])) {
                 case "newAccount":
                     include('admin/newAccount.php');
                     break;
-                case "manageUser":
-                    include('admin/manageUser.php');
-                    break;
                 case "manageAcc":
                     include('admin/manageAcc.php');
-                    break;
-                case "manageStudent":
-                    include('layout/manageStudent.php');
-                    break;
-                case "manageSubject":
-                    include('layout/manageSubject.php');
                     break;
                 default:
                     include('admin/home.php');
