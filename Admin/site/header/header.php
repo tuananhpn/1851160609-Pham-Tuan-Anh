@@ -16,25 +16,23 @@
                         
                         <?php
                         
-                        //  $sql = "SELECT*FROM categories WHERE parent =0";
-                        //         $query = mysqli_query()
+                         $sql = "SELECT*FROM categories";
+                                $query = mysqli_query($conn,$sql);
+                                while($rows = mysqli_fetch_assoc($query)){}
                         ?>
                         <a href="#">
-                            <span>ALBUM</span>
+                            <span><?php if($rows['level'] == 0){ echo $rows['name'];} ?></span>
                         </a>
                         <div class="container-11 nonSub">
                             <ul>
                                 <div col col1>
                                     <li>
-                                        <a href="#">Chụp ảnh kỷ yếu</a>
+                                        <a href="#"><?php if($rows['level'] == 1){ echo $rows['name'];} ?></a>
                                     </li>
                                 </div>
-                                <div col col2>
-                                    <li>
-                                        <a href="#">Chụp ảnh phóng sự cưới</a>
-                                    </li>
-                                </div>
-                                <div col col3>
+                                
+
+                                <!-- <div col col3>
                                     <li>
                                         <a href="#">Chụp ảnh tiệc sinh nhật</a>
                                     </li>
@@ -48,7 +46,7 @@
                                     <li>
                                         <a href="#">Chụp ảnh kỷ yếu tại Thái Bình</a>
                                     </li>
-                                </div>
+                                </div> -->
                                 <div class="extend">
                                     <a href="#">Xem thêm</a>
                                 </div>
