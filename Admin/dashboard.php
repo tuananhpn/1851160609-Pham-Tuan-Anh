@@ -34,7 +34,7 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="index.php?category=home">
                             <i class="nc-icon nc-grid-45"></i>
                             <span class="nav-item-title">HOME</span>
                         </a>
