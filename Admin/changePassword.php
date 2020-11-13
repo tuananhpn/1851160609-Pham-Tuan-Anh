@@ -1,33 +1,64 @@
-<div class="modal fade" id="changePass" tabIndex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" >
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="exampleModalLabel">CHANGE PASSWORD</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<?php
+$user_id=$_GET['id'];
+$sql="SELECT * FROM users WHERE id=$user_id";
+$res=mysqli_query($conn,$sql);
+$row=mysqli_fetch_array($res);
+if (isset($_POST['sbm'])) {
+    $pass=$_POST['pass'];
+    $npass = $_POST['newpass'];
+    $cpass = $_POST['cnewpass'];
+    if($row['password']==$pass){
+        if($npass==$cpass){
+            $sql = "UPDATE users 
+            SET password ='$npass'
+                WHERE id=$user_id
+            ";
+            if(mysqli_query($conn,$sql)){
+                header("location: index.php?category=manageAcc");
+            }
+            
+            
+        }
+        else{
+            $err="Pass nhập lại không đúng";
+        }
+    }else{
+        $err="Pass cũ không đúng";
+    }
+   
+}
+if(isset($err)){
+?>
+    <script>
+        alert('<?php echo $err?>')
+    </script>
+<?php    
+}
+?>
+<div class="col-12 mt-3">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">New Account</h4>
+            <p class="card-category">Cr</p>
+        </div>
+        <form role="form" method="post" enctype="multipart/form-data">
+        <div class="card-body" id="newUserForm">
+            <div class="form-group">
+                <label class="col-form-label">Old Password</label>
+                <input type="text" class="form-control" name="pass" id="Name" maxlength="30" >
             </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label class="col-form-label">Old Password:</label>
-                        <input type="password" class="form-control" name="oldPass" id="oldPass"/>
-                        <div class="invalid-feedback" id="oPassErr" style="font-size: 12px">Old password is required.</div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label">New Password:</label>
-                        <input type="password" class="form-control" name="newPassword" id="newPass" />
-                        <div class="invalid-feedback" id="nPassErr" style="font-size: 12px">New password is required.</div>
-                    </div>
-                    <label class="col-form-label">Confirm New Password:</label>
-                        <input type="password" class="form-control" name="reNewPassword" id="cfnewPass" />
-                        <div class="invalid-feedback" style="font-size: 12px">Confirm password does't match. Try again.</div>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" id="change-submit" class="btn btn-info mx-auto" value="SAVE" />
-                    </div>
-                </form>
+            <div class="form-group">
+                <label class="col-form-label">New Password</label>
+                <input type="text" class="d-block mw-auto w-100 form-fields form-control w-25" name="newpass" id="email">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label">Confirm Password</label>
+                <input type="text" class="form-control" name="cnewpass" id="Add" maxlength="30">
+            </div>
+            <div class="card-bottom">
+                <input type="submit" class="btn btn-info d-block ml-auto" id="newUserBtn" name="sbm" value="ADD NEW" />
             </div>
         </div>
+        </form>
     </div>
 </div>
