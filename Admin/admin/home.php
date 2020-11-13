@@ -1,5 +1,5 @@
 <div class="row mt-5">
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-4 col-sm-6">
         <div class="card card-stats">
             <div class="card-body ">
                 <div class="row">
@@ -10,12 +10,12 @@
                     </div>
                     <div class="col-7">
                         <?php
-                            $sql = "SELECT COUNT(*) as SLNews FROM Posts WHERE category not like 'notify'";
+                            $sql = "SELECT COUNT(*) as SLNews FROM posts";
                             $count = mysqli_query($conn, $sql);
                             $rowCount = mysqli_fetch_array($count);
                         ?>
                         <div class="numbers">
-                            <p class="card-category">Bài viết</p>
+                            <p class="card-category">Post</p>
                             <h4 class="card-title"><?= $rowCount['SLNews']; ?></h4>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-4 col-sm-6">
         <div class="card card-stats">
             <div class="card-body ">
                 <div class="row">
@@ -40,12 +40,12 @@
                     </div>
                     <div class="col-7">
                         <?php
-                            $sql = "SELECT COUNT(*) as SLNotify FROM Posts WHERE category like 'notify'";
+                            $sql = "SELECT COUNT(*) as SLNotify FROM images";
                             $count = mysqli_query($conn, $sql);
                             $rowCount = mysqli_fetch_array($count);
                         ?>
                         <div class="numbers">
-                            <p class="card-category">Thông báo</p>
+                            <p class="card-category">Image</p>
                             <h4 class="card-title"><?= $rowCount['SLNotify']; ?></h4>
                         </div>
                     </div>
@@ -59,37 +59,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-sm-6">
-        <div class="card card-stats">
-            <div class="card-body ">
-                <div class="row">
-                    <div class="col-5">
-                        <div class="icon-big text-center icon-warning">
-                            <i class="nc-icon nc-vector text-danger"></i>
-                        </div>
-                    </div>
-                    <div class="col-7">
-                    <?php
-                        $sql = "SELECT COUNT(*) as SLStudent FROM Users WHERE job like 'student'";
-                        $count = mysqli_query($conn, $sql);
-                        $rowCount = mysqli_fetch_array($count);
-                    ?>
-                        <div class="numbers">
-                            <p class="card-category">Accout</p>
-                            <h4 class="card-title"><?= $rowCount['SLStudent']; ?></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                    <i class="fa fa-clock-o"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-sm-6">
+    <div class="col-lg-4 col-sm-6">
         <div class="card card-stats">
             <div class="card-body ">
                 <div class="row">
@@ -100,7 +70,7 @@
                     </div>
                     <div class="col-7">
                         <?php
-                            $sqlUser = "SELECT COUNT(*) as SL FROM Users";
+                            $sqlUser = "SELECT COUNT(*) as SL FROM users";
                             $countUser = mysqli_query($conn, $sqlUser);
                             $rowCount = mysqli_fetch_array($countUser);
                         ?>
