@@ -1,11 +1,11 @@
 <?php
-session_start();
+    require('mysqli_connect.php');
+    $user_name=$_SESSION["user"]["fullname"];
 
-if (!isset($_SESSION['level'])) {
-    header('Location: index.php');
-}
+// if (!isset($_SESSION['level'])) {
+//     header('Location: index.php');
+// }
 ?>
-<!Doctype html>
 <html lang="en">
 
 <head>
@@ -22,14 +22,7 @@ if (!isset($_SESSION['level'])) {
 </head>
 
 <body>
-    <?php if (isset($_SESSION['idUser'])) {
-        require('mysqli_connect.php');
-        $accID = $_SESSION['idUser'];
-        $sql = "SELECT * FROM Account WHERE accID = $accID ";
-        $user = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_array($user);
-    }
-    ?>
+
     <div class="alert alert-success notify-success p-13" role="alert">
     </div>
     <div class="wrapper">
@@ -41,7 +34,7 @@ if (!isset($_SESSION['level'])) {
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./admin/home.php">
+                        <a class="nav-link" href="#">
                             <i class="nc-icon nc-grid-45"></i>
                             <span class="nav-item-title">HOME</span>
                         </a>
@@ -53,13 +46,13 @@ if (!isset($_SESSION['level'])) {
                         </a>
                         <ul class="nav collapse" id="component1">
                             <li class="nav-item nav-child">
-                                <a class="nav-link" href="dashboard.php?category=newPost">
+                                <a class="nav-link" href="index.php?category=newPost">
                                     <span class="link-name-mini">AP</span>
                                     <span class="link-name-normal nav-item-title">Add Posts</span>
                                 </a>
                             </li>
                             <li class="nav-item nav-child">
-                                <a class="nav-link" href="dashboard.php?category=newAccount">
+                                <a class="nav-link" href="index.php?category=newAccount">
                                     <span class="link-name-mini">NA</span>
                                     <span class="link-name-normal nav-item-title">New Account</span>
                                 </a>
@@ -73,7 +66,7 @@ if (!isset($_SESSION['level'])) {
                         </a>
                         <ul class="nav collapse" id="component2">
                             <li class="nav-item nav-child">
-                                <a class="nav-link" href="dashboard.php?category=manageAcc">
+                                <a class="nav-link" href="index.php?category=manageAcc">
                                     <span class="link-name-mini">MA</span>
                                     <span class="link-name-normal nav-item-title">Manager Accounts</span>
                                 </a>
@@ -99,7 +92,7 @@ if (!isset($_SESSION['level'])) {
                             </div>
                             <div class="users-wrapper">
                                 <div class="users-info">
-                                    <span><?= $row['firstName'] . ' ' . $row['lastName']; ?></span>
+                                    <span><?php echo $user_name ?></span>
                                 </div>
                                 <ul class="nav users-dropdown" id="component3">
                                     <li class="nav-item">
@@ -133,8 +126,17 @@ if (!isset($_SESSION['level'])) {
                 case "newAccount":
                     include('admin/newAccount.php');
                     break;
+                case "manageUser":
+                    include('admin/manageUser.php');
+                    break;
                 case "manageAcc":
                     include('admin/manageAcc.php');
+                    break;
+                case "manageStudent":
+                    include('layout/manageStudent.php');
+                    break;
+                case "manageSubject":
+                    include('layout/manageSubject.php');
                     break;
                 default:
                     include('admin/home.php');
