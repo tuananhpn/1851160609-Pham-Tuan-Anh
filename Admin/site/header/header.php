@@ -14,39 +14,23 @@
                     </li>
                     <li>
                        <?php
-                            $sql0 = "SELECT * FROM categories WHERE parent = 0";
-                            $query0 = mysqli_query($conn,$sql0);
-                            $rows0 = mysqli_fetch_assoc($query0);
-                            
-                            
+                            include_once("function.php");
                         ?>
                         <a href="#">
                             <span>ALBUM</span>
                         </a>
                         <div class="container-11 nonSub">
-                            <ul>
-                                <div col col1>
+                            <ul> <?php $rows = getAlbum(1); foreach ($rows as $row) { ?>
+                                <div col class="extend">
                                     <li>
-                                        <a href="#"></a>
+                                        <a href="#">
+                                        <?php 
+                                            echo $row['name'];
+                                        ?>
+                                        </a>
                                     </li>
                                 </div>
-                                
-
-                                <!-- <div col col3>
-                                    <li>
-                                        <a href="#">Chụp ảnh tiệc sinh nhật</a>
-                                    </li>
-                                </div>
-                                <div col col4>
-                                    <li>
-                                        <a href="#">Chụp ảnh sự kiện</a>
-                                    </li>
-                                </div>
-                                <div col col5>
-                                    <li>
-                                        <a href="#">Chụp ảnh kỷ yếu tại Thái Bình</a>
-                                    </li>
-                                </div> -->
+                                <?php } ?>
                                 <div class="extend">
                                     <a href="#">Xem thêm</a>
                                 </div>
@@ -59,34 +43,21 @@
                         </a>
                         <div class="container-11 nonSub">
                             <ul>
-                                <div col col1>
+                            <ul> <?php $rows = getAlbum(2); foreach ($rows as $row) { ?>
+                                <div col class="extend">
                                     <li>
-                                        <a href="#">Bảng giá chụp ảnh kỷ yếu</a>
+                                        <a href="#">
+                                        <?php 
+                                            echo $row['name'];
+                                        ?>
+                                        </a>
                                     </li>
                                 </div>
-                                <div col col2>
-                                    <li>
-                                        <a href="#">Bảng giá chụp ảnh phóng sự cưới</a>
-                                    </li>
-                                </div>
-                                <div col col3>
-                                    <li>
-                                        <a href="#">Bảng giá chụp ảnh tiệc sinh nhật</a>
-                                    </li>
-                                </div>
-                                <div col col4>
-                                    <li>
-                                        <a href="#">Bảng giá chụp ảnh sự kiện</a>
-                                    </li>
-                                </div>
-                                <div col col5>
-                                    <li>
-                                        <a href="#">Bảng giá chụp ảnh kỷ yếu tại Thái Bình</a>
-                                    </li>
-                                </div>
+                                <?php } ?>
                                 <div class="extend">
                                     <a href="#">Xem thêm</a>
                                 </div>
+                            </ul>
                             </ul>
                         </div>
                     </li>
@@ -96,27 +67,27 @@
                         </a>
                         <div class="container-11 nonSub">
                             <ul>
-                                <div col col1>
+                                <div>
                                     <li>
                                         <a href="#">Kỷ yếu tại Hà Nội</a>
                                     </li>
                                 </div>
-                                <div col col2>
+                                <div >
                                     <li>
                                         <a href="#">Kỷ yếu tại Hà Nam</a>
                                     </li>
                                 </div>
-                                <div col col3>
+                                <div >
                                     <li>
                                         <a href="#">Kỷ yếu tại Nam Định</a>
                                     </li>
                                 </div>
-                                <div col col4>
+                                <div >
                                     <li>
                                         <a href="#">Kỷ yếu tại Thái Bình</a>
                                     </li>
                                 </div>
-                                <div col col5>
+                                <div>
                                     <li>
                                         <a href="#">Kỷ yếu tại Hải Phòng</a>
                                     </li>
