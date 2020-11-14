@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlBum</title>
-    <link rel="stylesheet" href="/TrangChu/css/album.css">
-    <link rel="stylesheet" href="/TrangChu/css/container.css">
-    <link rel="stylesheet" href="/TrangChu/css/public.css">
+    <link rel="stylesheet" href="../css/album.css">
+    <link rel="stylesheet" href="../css/container.css">
+    <link rel="stylesheet" href="../css/public.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -30,7 +31,7 @@
             <div class="row" id="pagemenu-search">
                     <div class="col-lg-2 col-md-2 col-sm-12" id="logo">
                         <a href="#" class="navbar-brand">
-                            <img src="/TrangChu/images/logo_new.png">
+                            <img src="../images/logo_new.png">
                         </a>
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-12" id="mega">
@@ -216,13 +217,20 @@
                 </div>
             </div>
     </div>
+    <?php
+        require("../../mysqli_connect.php");
+        $sql = "SELECT*FROM posts WHERE id = 1";
+        $query = mysqli_query($conn,$sql);
+        $row = mysqli_fetch_assoc($query);
+    ?>
     <div class="container2">
         <p id="title"><a href="#">Trang chủ </a>> Các dịch vụ tại Cộng Studio</p>
         <h2 >CÁC DỊCH VỤ TẠI CỘNG STUDIO</h2>
         <div class="main">
-            <h3>CỘNG STUDIO | MỘT LẦN LƯU GIỮ - TRỌN ĐỜI KHẮC GHI</h3>
+            <h3><?php echo $row['title']; ?></h3>
             <div>
-                <p>
+                <p><?php echo $row['content']; ?></p>
+                <!-- <p>
                     <strong>✪</strong> Thời gian qua đi ai cũng muốn lưu lại cho mình những khoảnh khắc đẹp nhất trong
                     cuộc đời.
                     Để năm sau nhìn lại thấy 1 năm qua đi thật nhiều thay đổi..
@@ -254,7 +262,7 @@
                     những xúc cảm lắng đọng nhất cùng ekip phục vụ chuyên nghiệp, được đào tạo bài bản, song song với
                     việc đó, Cộng đầu tư hệ thống trang thiết bị hiện đại nhằm mang đến khách hàng những sản phẩm với
                     chất lượng tốt nhất !
-                </p>
+                </p> -->
             </div>
             <h4>DỊCH VỤ TẠI CỘNG STUDIO</h4>
         </div>
@@ -528,7 +536,7 @@
                     <div class="col-md-6" id="news-list">
                         <div class="col-md-2" id="news-img">
                             <a href="#">
-                                <img src="/images/newlist1.jpg">
+                                <img src="../images/newlist1.jpg">
                             </a>
                         </div>
                         <div class="col-md-10" id="news-content">
@@ -545,7 +553,7 @@
                     <div class="col-md-6" id="news-list">
                         <div class="col-md-2" id="news-img">
                             <a href="#">
-                                <img src="/images/newlist2.jpg">
+                                <img src="../images/newlist2.jpg">
                             </a>
                         </div>
                         <div class="col-md-10" id="news-content">
@@ -564,7 +572,7 @@
                     <div class="col-md-6" id="news-list">
                         <div class="col-md-2" id="news-img">
                             <a href="#">
-                                <img src="/images/newlist3.jpg">
+                                <img src="../images/newlist3.jpg">
                             </a>
                         </div>
                         <div class="col-md-10" id="news-content">
@@ -581,7 +589,7 @@
                     <div class="col-md-6" id="news-list">
                         <div class="col-md-2" id="news-img">
                             <a href="#">
-                                <img src="/images/newlist4.jpg">
+                                <img src="../images/newlist4.jpg">
                             </a>
                         </div>
                         <div class="col-md-10" id="news-content">
@@ -600,7 +608,7 @@
                     <div class="col-md-6" id="news-list">
                         <div class="col-md-2" id="news-img">
                             <a href="#">
-                                <img src="/images/newlist5.jpg">
+                                <img src="../images/newlist5.jpg">
                             </a>
                         </div>
                         <div class="col-md-10" id="news-content">
@@ -617,7 +625,7 @@
                     <div class="col-md-6" id="news-list">
                         <div class="col-md-2" id="news-img">
                             <a href="#">
-                                <img src="/images/newlist6.jpg">
+                                <img src="../images/newlist6.jpg">
                             </a>
                         </div>
                         <div class="col-md-10" id="news-content">
@@ -650,7 +658,7 @@
                     <div class="col-md-6 mt-md-0 mt-3">
                         <div class="footer-logo">
                             <a href="#">
-                                <img src="/TrangChu/images/logo_new.png">
+                                <img src="../images/logo_new.png">
                             </a>
                         </div>
                     </div>

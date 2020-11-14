@@ -16,7 +16,7 @@
                        <?php
                             include_once("function.php");
                         ?>
-                        <a href="#">
+                        <a href="album/album.php">
                             <span>ALBUM</span>
                         </a>
                         <div class="container-11 nonSub">

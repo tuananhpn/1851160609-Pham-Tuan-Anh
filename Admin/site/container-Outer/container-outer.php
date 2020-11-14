@@ -53,13 +53,24 @@
                     </p>
                 </div>
                 <div class="BlockContent">
+                <?php 
+                    $sql = "SELECT*FROM album";
+                    $query =mysqli_query($conn,$sql);
+
+                ?>
+                <?php
+                    $i = 0;
+                    while ($rows = mysqli_fetch_array($query)) {
+                        if ($i == 0) {
+                    ?>
                     <div class="row">
+                    <?php } ?>
                         <div class="col-sm-3" id="page-list-inside">
                             <a href="#" class="a">
-                                <img class="rounded-circle" src="images/blockcontent1.jpg" width="240">
+                                <img class="rounded-circle" src="images/<?php echo $rows['image']; ?>.jpg" width="240">
                             </a>
                             <div class="blockcontent-text">
-                                <h4 class="blockcontent-text-h4">CHỤP ẢNH KỶ YẾU</h4>
+                                <h4 class="blockcontent-text-h4"><?php echo $rows['name']; ?></h4>
                                 <p>
                                     HC MEDIA cung cấp dịch vụ chụp ảnh kỷ yếu "trọn gói- đẹp - rẻ "
                                 </p>
@@ -68,34 +79,8 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-sm-3" id="page-list-inside">
-                            <a href="#" class="a">
-                                <img class="rounded-circle" src="images/blockcontent2.jpg" width="240">
-                            </a>
-                            <div class="blockcontent-text">
-                                <h4 class="blockcontent-text-h4">CHỤP ẢNH PHÓNG SỰ CƯỚI</h4>
-                                <p>
-                                    HC MEDIA cam kết chụp ảnh phóng sự cưới đẹp - tự nhiên - cảm xúc!
-                                </p>
-                                <a class="view-more" href="#">
-                                    Xem chi tiết
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-sm-3" id="page-list-inside">
-                            <a href="#" class="a">
-                                <img class="rounded-circle" src="images/blockcontent3.jpg" width="240">
-                            </a>
-                            <div class="blockcontent-text">
-                                <h4 class="blockcontent-text-h4">CHỤP ẢNH SỰ KIỆN</h4>
-                                <p>
-                                    Chụp ảnh Sự Kiện đẹp uy tín chất lượng cùng HC MEDIA
-                                </p>
-                                <a class="view-more" href="#">
-                                    Xem chi tiết
-                                </a>
-                            </div>
-                        </div>
+                        
+                        
                         <div class="col-sm-3" id="page-list-inside">
                             <a href="#" class="a">
                                 <img class="rounded-circle" src="images/blockcontent4.jpg" width="240">
@@ -110,8 +95,13 @@
                                 </a>
                             </div>
                         </div>
+                        <?php
+                $i += 1;
+                if ($i == 4){ $i =0; ?>
                     </div>
-                    <div class="row">
+                    <?php } ?>
+     <?php } ?>
+                    <!-- <div class="row">
                         <div class="col-sm-3" id="page-list-inside">
                             <a href="#" class="a">
                                 <img class="rounded-circle" src="images/blockcontent5.jpg" width="240">
@@ -284,7 +274,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

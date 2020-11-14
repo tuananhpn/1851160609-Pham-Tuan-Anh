@@ -21,10 +21,11 @@
   <body>
     <?php
     require("../mysqli_connect.php");
+    include_once("box-mess/box-mess.php");
         include_once("container/container.php");
         include_once("header/header.php");
         include_once("container-Outer/container-outer.php");
-        include_once("box-mess/box-mess.php");
+       
     ?>
 
      <!-- Optional JavaScript -->
